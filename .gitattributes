@@ -1,0 +1,12 @@
+* text=auto eol=lf
+*.gz binary
+*.glb binary
+*.stl binary
+*.hdr binary
+*.wasm binary
+*.jpg binary
+*.png binary
+dist/vendor/** linguist-vendored
+dist/assets/** linguist-vendored
+dist/en.html linguist-generated
+dist/driving-guide* linguist-generated

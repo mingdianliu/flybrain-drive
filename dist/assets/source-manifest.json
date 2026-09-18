@@ -1,0 +1,338 @@
+[
+  {
+    "file": "assets/car.glb",
+    "url": "https://raw.githubusercontent.com/mrdoob/three.js/r180/examples/models/gltf/ferrari.glb",
+    "sha256": "cafe3f48da6797aa9bde75ca768bc5b57db366575fd233e90df186ae988a876e",
+    "bytes": 1681572
+  },
+  {
+    "file": "assets/daylight.hdr",
+    "url": "https://raw.githubusercontent.com/mrdoob/three.js/r180/examples/textures/equirectangular/venice_sunset_1k.hdr",
+    "sha256": "0e72ed46b5316cb5fb67fc81ff85b024a09146fd89ef3811a8d2299647ada118",
+    "bytes": 1397783
+  },
+  {
+    "file": "assets/FLY-LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/LICENSE",
+    "sha256": "02afa15750a169f0815ff1525dacf28d010f1dfd4cb119fc9e96bfca4f426eb4",
+    "bytes": 11362
+  },
+  {
+    "file": "assets/fly-visuals.yaml",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/visuals.yaml",
+    "sha256": "1b959ada4d8016d4c7f6bde4b118733b48e72d749acc74b8753b547c86b6546a",
+    "bytes": 4566
+  },
+  {
+    "file": "vendor/addons/loaders/GLTFLoader.js",
+    "url": "https://raw.githubusercontent.com/mrdoob/three.js/r180/examples/jsm/loaders/GLTFLoader.js",
+    "sha256": "67ac5551fdafa6e349bd80c8f8e5e39c136d6b2fb1ad647db9abb21dc86f9e4a",
+    "bytes": 114739
+  },
+  {
+    "file": "vendor/addons/loaders/DRACOLoader.js",
+    "url": "https://raw.githubusercontent.com/mrdoob/three.js/r180/examples/jsm/loaders/DRACOLoader.js",
+    "sha256": "7a4a51c694a6c9f983be452cc82b365e69ce08424654e3f245b4115e6efef258",
+    "bytes": 16781
+  },
+  {
+    "file": "vendor/addons/loaders/RGBELoader.js",
+    "url": "https://raw.githubusercontent.com/mrdoob/three.js/r180/examples/jsm/loaders/RGBELoader.js",
+    "sha256": "6c08f9c441040a61a188ad7711078da4df48f8c5ac3b3725dd6f10ac9ff81162",
+    "bytes": 268
+  },
+  {
+    "file": "vendor/addons/loaders/STLLoader.js",
+    "url": "https://raw.githubusercontent.com/mrdoob/three.js/r180/examples/jsm/loaders/STLLoader.js",
+    "sha256": "023ed97f848b633d8bcd53d4db3b996d29d0c644088700691297c552257d480b",
+    "bytes": 10715
+  },
+  {
+    "file": "vendor/addons/utils/BufferGeometryUtils.js",
+    "url": "https://raw.githubusercontent.com/mrdoob/three.js/r180/examples/jsm/utils/BufferGeometryUtils.js",
+    "sha256": "fda7e946b8e0b5ab39b779206589e7a1079a22eb24efb89d7223e03fdfb1f751",
+    "bytes": 35539
+  },
+  {
+    "file": "vendor/addons/utils/SkeletonUtils.js",
+    "url": "https://raw.githubusercontent.com/mrdoob/three.js/r180/examples/jsm/utils/SkeletonUtils.js",
+    "sha256": "0761b1e003917b215d25dd81439d854b36034b5a57ce84c2cfe3b02428d7b253",
+    "bytes": 11062
+  },
+  {
+    "file": "vendor/draco/draco_wasm_wrapper.js",
+    "url": "https://raw.githubusercontent.com/mrdoob/three.js/r180/examples/jsm/libs/draco/gltf/draco_wasm_wrapper.js",
+    "sha256": "8bb2952d2ba7d67e1414f8df819410cb0434a666be53f671fff75f68843d76f6",
+    "bytes": 58456
+  },
+  {
+    "file": "vendor/draco/draco_decoder.wasm",
+    "url": "https://raw.githubusercontent.com/mrdoob/three.js/r180/examples/jsm/libs/draco/gltf/draco_decoder.wasm",
+    "sha256": "a680d927bed9cb864ddbd63521868891af2bfbe755092761b4837487618df8ac",
+    "bytes": 192420
+  },
+  {
+    "file": "vendor/draco/draco_decoder.js",
+    "url": "https://raw.githubusercontent.com/mrdoob/three.js/r180/examples/jsm/libs/draco/gltf/draco_decoder.js",
+    "sha256": "8625489da79a805f4f2a7d511c3e52d8b4085608a9d2a4d5f4f9de5db0aea04f",
+    "bytes": 512465
+  },
+  {
+    "file": "assets/fly-model.json",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/fly-svg-maker/152506d3471646f009480c81f34aefbaec29a6e5/assets/model.json",
+    "sha256": "6ad88360fdd0264a8a71b5a077b0c72293eaf66c2ae68aa5fc29ffd323e28cc2",
+    "bytes": 89884
+  },
+  {
+    "file": "assets/fly/c_abdomen12.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/c_abdomen12.stl",
+    "sha256": "656b60100c06b0a8eb2dfbd201b12cac5eb31ffec6bf9c6c4ff3f97d14376371",
+    "bytes": 100084
+  },
+  {
+    "file": "assets/fly/c_abdomen3.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/c_abdomen3.stl",
+    "sha256": "264af5ede95bfcb11720219b31c76141a0921394f7c46e7fb7fb6b7066880f3b",
+    "bytes": 100084
+  },
+  {
+    "file": "assets/fly/c_abdomen4.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/c_abdomen4.stl",
+    "sha256": "662bbc3af32a987511af04e437d02c40e99840960809f5020abe9ec91b226ca4",
+    "bytes": 99984
+  },
+  {
+    "file": "assets/fly/c_abdomen5.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/c_abdomen5.stl",
+    "sha256": "87d1de98ad39ba52c096e0fd3b4860ae3a0aadeb4be46cac824e9b2501be6c48",
+    "bytes": 99984
+  },
+  {
+    "file": "assets/fly/c_abdomen6.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/c_abdomen6.stl",
+    "sha256": "748dda76a46554fd1743113eaafdf0dc2d10546095f5420406745e0eb47f87fb",
+    "bytes": 99984
+  },
+  {
+    "file": "assets/fly/c_haustellum.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/c_haustellum.stl",
+    "sha256": "babceb7a6adf0c88e8de6ce9810c32b397d3d1cdd073c0b1bea1df9d8c6ac4e9",
+    "bytes": 99984
+  },
+  {
+    "file": "assets/fly/c_head.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/c_head.stl",
+    "sha256": "39c51acbdf5957af95e294fa485cd7602103ca83bf451e95e29d251bd43765b6",
+    "bytes": 99984
+  },
+  {
+    "file": "assets/fly/c_rostrum.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/c_rostrum.stl",
+    "sha256": "4ed0fa33c5867013482011e2ff656b71189f2b29dfb0bda2b0797961d95d12e4",
+    "bytes": 100084
+  },
+  {
+    "file": "assets/fly/c_thorax.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/c_thorax.stl",
+    "sha256": "b7fac1a3bcbad2100d063bae2ae6e81217e808f3c32564763ee7e43ec3904969",
+    "bytes": 100084
+  },
+  {
+    "file": "assets/fly/l_arista.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/l_arista.stl",
+    "sha256": "6201af1cbe213ee6e259a6d89df65080f9cb9d806e6526cbcc7c5f1ae793f97c",
+    "bytes": 100084
+  },
+  {
+    "file": "assets/fly/l_eye.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/l_eye.stl",
+    "sha256": "08ce40c3264c9ab87703b6c013eae39d1bc48fa3e4cf02aec06d529c94e70daf",
+    "bytes": 100084
+  },
+  {
+    "file": "assets/fly/l_funiculus.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/l_funiculus.stl",
+    "sha256": "d2a6d35751922fb8b1ce07b269bc432f33d7f8f6d243b2dd1801e021b91d8156",
+    "bytes": 26584
+  },
+  {
+    "file": "assets/fly/l_haltere.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/l_haltere.stl",
+    "sha256": "13d77fcca66fca90db5cf00b33a7369ae80366fe39974df3667e709882e64ed6",
+    "bytes": 41284
+  },
+  {
+    "file": "assets/fly/l_pedicel.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/l_pedicel.stl",
+    "sha256": "6de0f06e57c78f8738f67c0c52b85e74cb105789497a4183944e90211d3a4bf4",
+    "bytes": 100084
+  },
+  {
+    "file": "assets/fly/l_wing.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/l_wing.stl",
+    "sha256": "142f77f15008fd75e1490b546bb859cf98c056121f1abd65acea2052c4e7764c",
+    "bytes": 100034
+  },
+  {
+    "file": "assets/fly/lf_coxa.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/lf_coxa.stl",
+    "sha256": "bff053bfee772796dae2b396aa0e3be12919b7fb1ee33b5fde369bec00944b64",
+    "bytes": 100084
+  },
+  {
+    "file": "assets/fly/lf_tarsus1.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/lf_tarsus1.stl",
+    "sha256": "29085dda732699c4a3110458303adf2eec667f7db6e42166d408c260ae6acf5e",
+    "bytes": 89584
+  },
+  {
+    "file": "assets/fly/lf_tarsus2.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/lf_tarsus2.stl",
+    "sha256": "996735c15a7e8e0c022babf5500224fa6e23de0e277305279d4b6787d56335d8",
+    "bytes": 89884
+  },
+  {
+    "file": "assets/fly/lf_tarsus3.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/lf_tarsus3.stl",
+    "sha256": "166044083a5a4a0e8b7db91cdd71ef0ea0e3feb18f1630955156de14931d9495",
+    "bytes": 100084
+  },
+  {
+    "file": "assets/fly/lf_tarsus4.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/lf_tarsus4.stl",
+    "sha256": "c90d8c6ebd0e2384a45524944e4fb2e02ba413be26ee04bc5030b2afb5876943",
+    "bytes": 100034
+  },
+  {
+    "file": "assets/fly/lf_tarsus5.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/lf_tarsus5.stl",
+    "sha256": "93b048052461fa756a767608418ec90e537435a1ff282f2a393faa45ba60ae73",
+    "bytes": 100084
+  },
+  {
+    "file": "assets/fly/lf_tibia.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/lf_tibia.stl",
+    "sha256": "8138fe5f1fc52588dca6677bb338d39451813ac96159f78d6cf677eba73f3862",
+    "bytes": 85534
+  },
+  {
+    "file": "assets/fly/lf_trochanterfemur.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/lf_trochanterfemur.stl",
+    "sha256": "50e4e7baf2852a369f0dda2a2c9708a68c45893b3019a79dd74799e8e2ea64c9",
+    "bytes": 80984
+  },
+  {
+    "file": "assets/fly/lh_coxa.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/lh_coxa.stl",
+    "sha256": "ad3a10789b8bd5e0f3db2667a1fe373ffdb83cfc876b34d60508e9e34a51366d",
+    "bytes": 100084
+  },
+  {
+    "file": "assets/fly/lh_tarsus1.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/lh_tarsus1.stl",
+    "sha256": "61af16259215525e092d61426b874c7855485a9c7cfa91eecfc2fe99281a2dc6",
+    "bytes": 38934
+  },
+  {
+    "file": "assets/fly/lh_tarsus2.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/lh_tarsus2.stl",
+    "sha256": "da796bc3ad5d355b9e941aeeb6ad96c7fb00dee7421995605dcc81cd6fd7af12",
+    "bytes": 98684
+  },
+  {
+    "file": "assets/fly/lh_tarsus3.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/lh_tarsus3.stl",
+    "sha256": "08280c942abf91279e86414d064f39cae2b46ba9f62845252a9763d0839fabe5",
+    "bytes": 100084
+  },
+  {
+    "file": "assets/fly/lh_tarsus4.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/lh_tarsus4.stl",
+    "sha256": "623f9059236af1327770f6f8e5e4fb8dc87930c49f5559c36d3d4245f51f7678",
+    "bytes": 99984
+  },
+  {
+    "file": "assets/fly/lh_tarsus5.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/lh_tarsus5.stl",
+    "sha256": "1b86c811928d0a6e04c693b9a213f06c0f7a037584252fc8f35d408be1bf87e8",
+    "bytes": 100084
+  },
+  {
+    "file": "assets/fly/lh_tibia.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/lh_tibia.stl",
+    "sha256": "2853873ade9abeb35da5f1a6c822d223bbe19a50d8ed77921bb77743b4782a60",
+    "bytes": 37484
+  },
+  {
+    "file": "assets/fly/lh_trochanterfemur.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/lh_trochanterfemur.stl",
+    "sha256": "8e6b7ee8c4f6c388b64250086acc952c10abd469ac7bf0fb7015c2837e53d423",
+    "bytes": 100084
+  },
+  {
+    "file": "assets/fly/lm_coxa.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/lm_coxa.stl",
+    "sha256": "01a6f4f4147b7cd308f0a1db79786694632c9fe5a3425b5e3454a7fa7624897b",
+    "bytes": 100084
+  },
+  {
+    "file": "assets/fly/lm_tarsus1.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/lm_tarsus1.stl",
+    "sha256": "b7f50bfe1e75dfa65110a4f80e0216858a7a75712115b04605f344c8e837b1ae",
+    "bytes": 46284
+  },
+  {
+    "file": "assets/fly/lm_tarsus2.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/lm_tarsus2.stl",
+    "sha256": "2dbb000ae11ef58de0023ccbdbfc8f1c5ff7b7517824a58d3e204f3ee00770c4",
+    "bytes": 77884
+  },
+  {
+    "file": "assets/fly/lm_tarsus3.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/lm_tarsus3.stl",
+    "sha256": "8f1814f0054382e037279f04d0bb998e36ccaabd57ec418d35dd6f7e47bd51bb",
+    "bytes": 92884
+  },
+  {
+    "file": "assets/fly/lm_tarsus4.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/lm_tarsus4.stl",
+    "sha256": "3f2881bd6f1fdb445bf01c00cac53c9a1b30388cd3fdc1b327704c60f138bf03",
+    "bytes": 100084
+  },
+  {
+    "file": "assets/fly/lm_tarsus5.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/lm_tarsus5.stl",
+    "sha256": "3e9a76e4c0c4e829705271846f93a3aa056a0e87bc99996519722eeb841c1b70",
+    "bytes": 49384
+  },
+  {
+    "file": "assets/fly/lm_tibia.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/lm_tibia.stl",
+    "sha256": "dc1ad6da6db91ba703150e6150f59a498f9dbd311b1ec0678da3f896c421dab5",
+    "bytes": 33884
+  },
+  {
+    "file": "assets/fly/lm_trochanterfemur.stl",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/flygym/38c8ec61034cd59bc5ba0de20688d4a3c0000d60/src/flygym/assets/model/neuromechfly/meshes/simplified_max2000faces/lm_trochanterfemur.stl",
+    "sha256": "9619105028e5006d891b12dfced77aafa3c41a599edbf49d14691907ce2eb502",
+    "bytes": 41384
+  },
+  {
+    "file": "vendor/addons/loaders/HDRLoader.js",
+    "url": "https://raw.githubusercontent.com/mrdoob/three.js/r180/examples/jsm/loaders/HDRLoader.js",
+    "bytes": 12456,
+    "sha256": "d7053cfc4019f520335ae07e0fe82b4ef5a66b6766e8b253d066616184995e89"
+  },
+  {
+    "file": "assets/FLY-NOTICE.txt",
+    "url": "https://raw.githubusercontent.com/NeLy-EPFL/fly-svg-maker/152506d3471646f009480c81f34aefbaec29a6e5/assets/NOTICE",
+    "bytes": 597,
+    "sha256": "6f54dbdf48fc7c95ea9b61276471184c822209ed283ff435fcb4d93e347e2bdb"
+  },
+  {
+    "file": "vendor/draco/LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/google/draco/main/LICENSE",
+    "bytes": 13898,
+    "sha256": "d3709b0fb4b8a94bbb1d02b8a2e484f258b0d9c5c5a01f940391f3fe662cd1a4"
+  }
+]

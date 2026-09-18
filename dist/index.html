@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Flybrain Drive · 果蝇脑驾驶实验室</title>
+    <meta name="description" content="在街区道路中探索果蝇连接组、神经放电与自动驾驶。" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b151b'/%3E%3Cpath d='M8 25V12a8 8 0 0116 0v13M16 5v5m0 4v5m0 4v4' stroke='%23daff69' stroke-width='3' fill='none'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script type="importmap">
+      { "imports": { "three": "./vendor/three.module.min.js" } }
+    </script>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="./"
+        ><span class="brand-icon">F/</span
+        ><span>FLYBRAIN <b>DRIVE</b><small>果蝇脑驾驶实验室</small></span></a
+      >
+      <div class="header-right">
+        <a class="language-link" href="en.html" lang="en" hreflang="en">English</a
+        ><span class="tag">MALECNS · V1.0</span
+        ><a class="guide-link" href="driving-guide.html">驾驶原理 ↗</a
+        ><button id="model-info" class="quiet">模型说明 ↗</button>
+      </div>
+    </header>
+    <main>
+      <div class="page-title">
+        <div>
+          <p class="eyebrow">EXPERIMENT 02 / CITY STREETS</p>
+          <h1>坐进驾驶席，驶入果蝇的街区。</h1>
+        </div>
+        <div class="live-status" id="status" role="status">正在载入街区、车辆与神经回路…</div>
+      </div>
+      <div class="workspace">
+        <section class="track-panel panel">
+          <div class="panel-top">
+            <div>
+              <span class="index">01</span><strong>城市街区</strong
+              ><span class="secondary">街区道路 · 闭环仿真</span>
+            </div>
+            <div class="segmented" aria-label="观察视角">
+              <button id="driver" class="selected">驾驶席</button
+              ><button id="passenger">副驾驶</button><button id="overview">全景</button
+              ><button id="top-view">俯视</button>
+            </div>
+          </div>
+          <div class="track-stage" id="track-stage">
+            <div class="track-canvas" id="road-view"></div>
+            <div class="track-label"><span>DOWNTOWN / 02</span><b>NEURAL CITY DRIVE</b></div>
+            <div id="traffic-status" class="traffic-status" role="status">路口信号加载中</div>
+            <div class="mode-badge" id="mode-badge">等待启动</div>
+            <div class="speedometer">
+              <strong id="speed-value">0.0</strong><span>km/h</span>
+              <div class="speed-line"><i id="speed-fill"></i></div>
+            </div>
+            <div class="track-hint" id="track-hint">驾驶席视角 · 右侧可旋转观察大脑</div>
+          </div>
+          <div class="drive-toolbar">
+            <button class="primary" id="run" disabled>▶ 开始驾驶</button
+            ><button id="reset">↺ 重置</button>
+            <div class="toolbar-divider"></div>
+            <button id="place-obstacle">＋ 放置障碍</button
+            ><button id="clear-obstacles" class="quiet">清空障碍</button
+            ><span class="keyboard-hint">SPACE 暂停</span>
+          </div>
+          <div class="metrics">
+            <div><span>街区巡游</span><strong id="laps">00</strong></div>
+            <div>
+              <span>行驶距离</span><strong id="distance">0 <small>m</small></strong>
+            </div>
+            <div><span>碰撞次数</span><strong id="collisions">0</strong></div>
+            <div>
+              <span>仿真速度</span><strong id="ratio">— <small>×</small></strong>
+            </div>
+          </div>
+        </section>
+        <aside class="neural-column">
+          <section class="brain-panel panel">
+            <div class="panel-top">
+              <div><span class="index">02</span><strong>驾驶中的神经活动</strong></div>
+              <span class="tag mini">3D</span>
+            </div>
+            <div class="model-choice">
+              <label for="model-size">仿真规模</label
+              ><select id="model-size">
+                <option value="8000" selected>实时优先 · 8,000 个</option>
+                <option value="4000">省电模式 · 4,000 个</option>
+                <option value="small">轻量回路 · 1,860 个</option>
+              </select>
+              <p id="model-status" role="status">正在加载实时回路…</p>
+            </div>
+            <div id="brain-view">
+              <div class="brain-loading" id="brain-loading">载入真实神经元位置</div>
+            </div>
+            <div class="brain-legend">
+              <span><i></i>刚刚放电</span><span>拖动旋转 · 滚轮缩放</span>
+            </div>
+            <div class="brain-stats">
+              <div><strong id="neuron-count">—</strong><span>参与仿真</span></div>
+              <div>
+                <strong id="active-count">0</strong><span id="active-label">近 120 ms 活跃</span
+                ><small id="active-percent">0.0% 的回路</small>
+              </div>
+              <div><strong id="spike-count">0</strong><span>累计放电</span></div>
+            </div>
+            <div class="brain-controls">
+              <div class="segmented" aria-label="神经元显示范围">
+                <button id="brain-circuit" aria-pressed="false" disabled>仅仿真回路</button
+                ><button id="brain-anatomy" class="selected" aria-pressed="true" disabled>
+                  解剖位置
+                </button>
+              </div>
+              <label for="activity-window"
+                >放电余辉
+                <select id="activity-window" disabled>
+                  <option value="120" selected>120 ms</option>
+                  <option value="500">500 ms</option>
+                  <option value="1000">1 s</option>
+                </select></label
+              >
+            </div>
+            <p class="brain-scope" id="brain-scope">正在核对仿真范围…</p>
+            <p class="brain-explanation" id="brain-explanation">
+              亮光保留最近 120 ms 的模拟放电；暂停时定格，重置后清空。
+            </p>
+          </section>
+          <section class="control-panel panel">
+            <div class="panel-top">
+              <div><span class="index">03</span><strong>调节实验</strong></div>
+            </div>
+            <label class="range-label" for="target-speed"
+              ><span>目标速度</span><output id="target-speed-value">18 km/h</output></label
+            ><input id="target-speed" type="range" min="8" max="32" step="1" value="18" /><label
+              class="range-label"
+              for="grip"
+              ><span>轮胎抓地力</span><output id="grip-value">100%</output></label
+            ><input id="grip" type="range" min="40" max="100" step="5" value="100" /><label
+              class="range-label"
+              for="signal-mode"
+              ><span>路口红绿灯</span
+              ><select id="signal-mode">
+                <option value="auto">自动周期</option>
+                <option value="red">全部红灯</option>
+                <option value="green">全部绿灯</option>
+              </select></label
+            ><label class="switch-row"
+              ><span>街区行人<small>沿人行道行走，并通过斑马线。</small></span
+              ><input
+                type="checkbox"
+                id="pedestrians-enabled"
+                checked
+                aria-label="街区行人" /></label
+            ><label class="switch-row"
+              ><span>街区车辆<small>同向跟车、对向来车与路口等待。</small></span
+              ><input type="checkbox" id="vehicles-enabled" checked aria-label="街区车辆" /></label
+            ><label class="switch-row"
+              ><span>接通神经输出<small>断开后车辆制动，神经仿真继续。</small></span
+              ><input type="checkbox" id="brain-connected" checked aria-label="接通神经输出"
+            /></label>
+            <div class="motor-readout">
+              <span>转向 <b id="steering">0°</b></span
+              ><span>制动 <b id="brake">0%</b></span>
+            </div>
+          </section>
+        </aside>
+      </div>
+      <div class="telemetry-row">
+        <section class="panel signal-panel">
+          <div class="panel-top">
+            <div><span class="index">04</span><strong>实际放电 · 控制读出</strong></div>
+            <div class="chart-legend">
+              <span class="left">左转通路</span><span class="right">右转通路</span
+              ><span class="danger">制动通路</span>
+            </div>
+          </div>
+          <canvas id="signal-chart" aria-label="实际神经放电率随时间变化"></canvas>
+        </section>
+        <section class="panel vision-panel">
+          <div class="panel-top">
+            <div><span class="index">05</span><strong>车辆看见了什么</strong></div>
+            <span class="secondary">11 条距离射线</span>
+          </div>
+          <canvas id="sensor-chart" aria-label="前方道路与障碍感知"></canvas>
+        </section>
+      </div>
+      <footer>
+        <span>真实连接组 · 简化 LIF 动力学 · 人工感知与控制读出</span
+        ><span>浏览器内的驾驶实验；不用于真实车辆。</span>
+      </footer>
+    </main>
+    <dialog id="info-dialog">
+      <button id="close-info" class="dialog-close" aria-label="关闭模型说明">×</button>
+      <p class="eyebrow">ABOUT THIS EXPERIMENT</p>
+      <h2>神经网络在这里做什么？</h2>
+      <div id="model-description">
+        车辆的道路与障碍信号被转换为刺激，注入 MaleCNS
+        视觉回路。真实连接传播产生的放电被读取为转向与制动信号。感觉编码和输出映射是人工设计的，不是果蝇学会了开车。
+      </div>
+      <p id="dataset-description"></p>
+      <p>
+        这是连接组启发的驾驶实验，使用简化 LIF
+        神经元，不是完整的生物物理果蝇，也不代表生物能驾驶车辆。
+      </p>
+      <p>
+        <a href="./model-notes.html" target="_blank" rel="noopener">查看数据来源与模型细节 ↗</a>
+      </p>
+    </dialog>
+    <script type="module" src="app.mjs"></script>
+  </body>
+</html>

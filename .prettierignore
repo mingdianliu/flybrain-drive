@@ -1,0 +1,10 @@
+node_modules/
+work/
+dist/vendor/
+dist/assets/
+dist/data/
+# Generated pages: rebuild rather than edit them.
+dist/en.html
+dist/driving-guide*
+docs/performance-sample.json
+package-lock.json

@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Flybrain Drive · Model and Data Notes</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      article {
+        max-width: 840px;
+        margin: 50px auto;
+        padding: 0 24px;
+        line-height: 1.85;
+      }
+      h2 {
+        margin-top: 36px;
+        font-size: 22px;
+      }
+      p,
+      li {
+        color: #bccbd4;
+      }
+      code {
+        color: #dcff71;
+      }
+      nav {
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      td,
+      th {
+        text-align: left;
+        padding: 10px;
+        border-bottom: 1px solid #26323b;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <nav>
+        <a href="en.html">← Back to driving</a><a href="model-notes.html" lang="zh-CN">中文</a>
+      </nav>
+      <h1 style="margin-top: 28px">Real wiring. Engineered driving interfaces.</h1>
+      <p>
+        Flybrain Drive connects a visual-circuit subgraph of MaleCNS v1.0 to a virtual car,
+        prioritizing real-time interaction. The loop is: road state → engineered sensory encoding →
+        neural spikes and synaptic propagation → engineered motor readout → vehicle motion.
+      </p>
+      <h2>Which data are real?</h2>
+      <p>
+        The source is <a href="https://male-cns.janelia.org/download/">Janelia MaleCNS v1.0</a>:
+        public neuron annotations, neurotransmitter predictions and connection-weight tables. Source
+        SHA-256 checksums, type tables and compressed-model checksums are in the
+        <a href="data/manifest.json">base data manifest</a> and
+        <a href="data/realtime-manifest.json">real-time circuit manifest</a>. Data are licensed
+        under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; citation:
+        <a href="https://doi.org/10.1016/j.cell.2026.08.015">Berg et al., 2026</a>. This project
+        selects, reindexes and compresses subgraphs.
+      </p>
+      <p>
+        The default circuit contains
+        <b>8,000 neurons, 1,277,045 directed connections and 10,789,472 synapse counts</b>.
+        Alternatives contain 4,000 nodes with 523,173 connections, or the original 1,860 nodes with
+        114,188 connections. Each node retains its source body ID, type, transmitter and soma
+        position. All selected nodes have recorded coordinates. Every retained edge and weight comes
+        from the source; no fictional neurons or connections are added.
+      </p>
+      <p>
+        The 3D points use native MaleCNS EM coordinates in 8 nm voxels, with a shared translation,
+        uniform scaling and display-orientation transform. This is neither a morphological
+        reconstruction nor atlas registration. Gray soma points are anatomical context and do not
+        all participate in the selected circuit. Up to approximately 4,000 edges are
+        deterministically sampled from connections with weight at least 40, then drawn as straight
+        lines between endpoints. They are not neurite paths. This display limit does not prune
+        simulation connections.
+      </p>
+      <h2>How is the circuit selected?</h2>
+      <p>
+        Cholinergic T4a/T4b/T5a/T5b neurons with coordinates are divided into two spatial groups
+        using the median x coordinate of all valid somas. Each group contributes 192
+        deterministically sampled inputs; another 128 LC4/LPLC2 inputs are sampled. For each group,
+        the 260 targets with the greatest total direct output weight are included, followed by the
+        900 strongest merged second-hop targets. All original connections between selected nodes are
+        retained.
+      </p>
+      <p>
+        The 4,000- and 8,000-node circuits retain these original 1,860 nodes and add downstream
+        nodes with recorded coordinates, ranked by total outgoing synapse count from the original
+        circuit. All three modes use the same body IDs at the driving interface. Each pool has 48
+        readout neurons distinct from injected inputs, and its group supplies at least 90% of their
+        direct input weight from the three groups. “Left turn,” “right turn” and “braking” are
+        assigned engineering roles, not validated biological driving functions. Background on motion
+        and looming circuits:
+        <a href="https://www.nature.com/articles/nature24626">Klapoetke et al., Nature 2017</a> and
+        <a href="https://www.nature.com/articles/s41586-022-05562-8"
+          >Synaptic gradients transform object location to action, Nature 2023</a
+        >.
+      </p>
+      <h2>Dynamics and causal checks</h2>
+      <p>
+        Each neuron is a single-compartment, current-based LIF unit: 0.2 ms integration step, −52 mV
+        rest/reset potential, −45 mV threshold, 20 ms membrane time constant, 5 ms synaptic time
+        constant, 2.2 ms refractory period and 1.8 ms synaptic delay. Cholinergic connections are
+        excitatory; GABA and glutamate are treated as inhibitory. Other transmitters have zero fast
+        effect. These are assumed parameters, not a complete biophysical model calibrated neuron by
+        neuron.
+      </p>
+      <p>
+        Inputs are deterministic, staggered pulses. Steering groups receive a 20 Hz baseline rising
+        to 200 Hz with planned steering demand; braking input spans 0–150 Hz. Readout measures
+        actual downstream mean firing rates with 65 ms smoothing. A piecewise-linear calibration
+        table decodes steering demand, followed by an engineered actuator with 140 ms smoothing, a
+        0.005 rad deadband and a 0.9 rad/s rate limit. Brake-pool rate maps to brake force. Stimulus
+        strength is never substituted for downstream spikes.
+      </p>
+      <p>
+        When all effective synaptic signs are set to zero in a test, input neurons still fire but
+        downstream readout disappears and the car cannot start. Disconnecting neural motor output
+        leaves the model running while the car brakes. Brain highlights use actual last-spike times
+        with 120 ms (default), 500 ms or 1 s afterglow. Active counts measure neurons that fired at
+        least once in that window; percentages use the selected simulated population as the
+        denominator. A longer afterglow does not add spikes. Pause freezes time and highlights;
+        reset clears them. The 139,659 gray reference points do not mean the whole brain is
+        simulated. Charts show actual readout rates. Neural and vehicle dynamics share a clock;
+        rendering is independent, and simulation speed is measured against wall time.
+      </p>
+      <h2>Real-time operation and circuit size</h2>
+      <p>
+        The default 8,000-neuron circuit targets 1× real time and measured approximately 1× in the
+        local browser. If foreground performance stays below 0.9×, try 4,000 or 1,860 nodes.
+        Changing size resets the drive and neural state. The page does not skip neural integration
+        or invent spikes to maintain animation. A local full classified CNS run used 166,606 nodes
+        and 25,574,615 connections, but an initial Node.js benchmark achieved approximately 0.39×,
+        so the website does not load it by default. Local full-model experiment scripts remain
+        available.
+      </p>
+      <h2>Other vehicles</h2>
+      <p>
+        Four conventionally controlled cars travel in both directions, waiting for signals,
+        pedestrians and leading cars. They have no fly neural model. Approaching traffic increases
+        the main car's brake-pathway input while a traffic supervisor limits speed. Oriented
+        rectangular footprints approximate collisions. The traffic toggle acts immediately; pause
+        and reset share the neural model's simulation clock.
+      </p>
+      <p><a href="driving-guide.en.html">Read the full driving guide →</a></p>
+      <h2>Vehicle, cameras and limitations</h2>
+      <p>
+        The planner uses exact road centerlines and obstacle positions to construct paths and
+        avoidance offsets. It does not recognize roads end to end from camera pixels. Eleven
+        distance rays are centered on vehicle heading. The driver camera follows the car; the
+        passenger camera is an observation view and does not change neural input. Neither recreates
+        the physiology of fly compound-eye vision.
+      </p>
+      <p>
+        The car uses a simplified bicycle model, with grip affecting steering. Speed policy, road
+        planning, encoding, decoding and collision stops are engineered. The fly appearance uses
+        segmented meshes from a NeuroMechFly scan; its pose, color and foreleg grip are display
+        animation with inverse kinematics. This female-derived body has not been registered neuron
+        by neuron to the male MaleCNS brain and is not a musculoskeletal simulation. The Ferrari 458
+        Italia mesh uses its original steering wheel; foreleg contacts follow the same rim. The
+        passenger view looks toward the driver. Pedestrians use four Quaternius characters with the
+        author's Walk/Idle animations (CC0), moving along the models' +Z forward direction.
+        <a href="assets/ATTRIBUTION.md">Asset sources and licenses</a> are retained.
+      </p>
+      <p>
+        This experiment does not show that a fly has learned to drive and is not suitable for real
+        vehicles. Four signal-controlled crossing areas use staggered cycles of 18 seconds red, 22
+        seconds green and 4 seconds amber. Twenty pedestrians walk on sidewalks or crosswalks.
+        Explicit traffic and pedestrian rules constrain speed while danger stimulates the neural
+        brake pathway. Those rules are not learned traffic-law knowledge. Pedestrians and signals
+        pause with the shared clock. Manually selecting green lights does not disable pedestrian
+        yielding. High speeds or dense obstacles can cause stops or collisions.
+      </p>
+      <p>
+        Code uses the MIT license; Three.js retains its
+        <a href="vendor/THREE-LICENSE.txt">original MIT license</a>. Neural model data remain CC BY
+        4.0. This page does not upload driving actions or neural activity.
+      </p>
+    </article>
+  </body>
+</html>

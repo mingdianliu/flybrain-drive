@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Flybrain Drive · Neural Driving Lab</title>
+    <meta name="description" content="Explore a fly connectome, neural spikes and closed-loop driving on virtual city streets." />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b151b'/%3E%3Cpath d='M8 25V12a8 8 0 0116 0v13M16 5v5m0 4v5m0 4v4' stroke='%23daff69' stroke-width='3' fill='none'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script type="importmap">
+      { "imports": { "three": "./vendor/three.module.min.js" } }
+    </script>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="en.html"
+        ><span class="brand-icon">F/</span
+        ><span>FLYBRAIN <b>DRIVE</b><small>NEURAL DRIVING LAB</small></span></a
+      >
+      <div class="header-right">
+        <a class="language-link" href="./" lang="zh-CN" hreflang="zh-CN">中文</a><span class="tag">MALECNS · V1.0</span
+        ><a class="guide-link" href="driving-guide.en.html">How it works ↗</a
+        ><button id="model-info" class="quiet">About the model ↗</button>
+      </div>
+    </header>
+    <main>
+      <div class="page-title">
+        <div>
+          <p class="eyebrow">EXPERIMENT 02 / CITY STREETS</p>
+          <h1>Take the wheel. Follow the neurons.</h1>
+        </div>
+        <div class="live-status" id="status" role="status">Loading the city, vehicles and neural circuit…</div>
+      </div>
+      <div class="workspace">
+        <section class="track-panel panel">
+          <div class="panel-top">
+            <div>
+              <span class="index">01</span><strong>City streets</strong
+              ><span class="secondary">Closed-loop simulation</span>
+            </div>
+            <div class="segmented" aria-label="Camera view">
+              <button id="driver" class="selected">Driver</button
+              ><button id="passenger">Passenger</button><button id="overview">Overview</button
+              ><button id="top-view">Overhead</button>
+            </div>
+          </div>
+          <div class="track-stage" id="track-stage">
+            <div class="track-canvas" id="road-view"></div>
+            <div class="track-label"><span>DOWNTOWN / 02</span><b>NEURAL CITY DRIVE</b></div>
+            <div id="traffic-status" class="traffic-status" role="status">Loading traffic signals</div>
+            <div class="mode-badge" id="mode-badge">Ready to start</div>
+            <div class="speedometer">
+              <strong id="speed-value">0.0</strong><span>km/h</span>
+              <div class="speed-line"><i id="speed-fill"></i></div>
+            </div>
+            <div class="track-hint" id="track-hint">Driver view · Rotate the brain on the right</div>
+          </div>
+          <div class="drive-toolbar">
+            <button class="primary" id="run" disabled>▶ Start driving</button
+            ><button id="reset">↺ Reset</button>
+            <div class="toolbar-divider"></div>
+            <button id="place-obstacle">＋ Add obstacle</button
+            ><button id="clear-obstacles" class="quiet">Clear obstacles</button
+            ><span class="keyboard-hint">SPACE Pause</span>
+          </div>
+          <div class="metrics">
+            <div><span>Laps</span><strong id="laps">00</strong></div>
+            <div>
+              <span>Distance</span><strong id="distance">0 <small>m</small></strong>
+            </div>
+            <div><span>Collisions</span><strong id="collisions">0</strong></div>
+            <div>
+              <span>Simulation speed</span><strong id="ratio">— <small>×</small></strong>
+            </div>
+          </div>
+        </section>
+        <aside class="neural-column">
+          <section class="brain-panel panel">
+            <div class="panel-top">
+              <div><span class="index">02</span><strong>Neural activity</strong></div>
+              <span class="tag mini">3D</span>
+            </div>
+            <div class="model-choice">
+              <label for="model-size">Circuit size</label
+              ><select id="model-size">
+                <option value="8000" selected>Real time · 8,000</option>
+                <option value="4000">Low power · 4,000</option>
+                <option value="small">Lightweight · 1,860</option>
+              </select>
+              <p id="model-status" role="status">Loading the real-time circuit…</p>
+            </div>
+            <div id="brain-view">
+              <div class="brain-loading" id="brain-loading">Loading recorded neuron positions</div>
+            </div>
+            <div class="brain-legend">
+              <span><i></i>Recent spikes</span><span>Drag to rotate · Scroll to zoom</span>
+            </div>
+            <div class="brain-stats">
+              <div><strong id="neuron-count">—</strong><span>Simulated neurons</span></div>
+              <div>
+                <strong id="active-count">0</strong><span id="active-label">Active in 120 ms</span
+                ><small id="active-percent">0.0% of circuit</small>
+              </div>
+              <div><strong id="spike-count">0</strong><span>Total spikes</span></div>
+            </div>
+            <div class="brain-controls">
+              <div class="segmented" aria-label="Neuron display scope">
+                <button id="brain-circuit" aria-pressed="false" disabled>Circuit only</button
+                ><button id="brain-anatomy" class="selected" aria-pressed="true" disabled>
+                  Anatomy
+                </button>
+              </div>
+              <label for="activity-window"
+                >Spike afterglow
+                <select id="activity-window" disabled>
+                  <option value="120" selected>120 ms</option>
+                  <option value="500">500 ms</option>
+                  <option value="1000">1 s</option>
+                </select></label
+              >
+            </div>
+            <p class="brain-scope" id="brain-scope">Checking circuit scope…</p>
+            <p class="brain-explanation" id="brain-explanation">
+              Highlights show simulated spikes in the last 120 ms. Pause freezes them; reset clears them.
+            </p>
+          </section>
+          <section class="control-panel panel">
+            <div class="panel-top">
+              <div><span class="index">03</span><strong>Experiment controls</strong></div>
+            </div>
+            <label class="range-label" for="target-speed"
+              ><span>Target speed</span><output id="target-speed-value">18 km/h</output></label
+            ><input id="target-speed" type="range" min="8" max="32" step="1" value="18" /><label
+              class="range-label"
+              for="grip"
+              ><span>Tire grip</span><output id="grip-value">100%</output></label
+            ><input id="grip" type="range" min="40" max="100" step="5" value="100" /><label
+              class="range-label"
+              for="signal-mode"
+              ><span>Traffic lights</span
+              ><select id="signal-mode">
+                <option value="auto">Automatic cycle</option>
+                <option value="red">All red</option>
+                <option value="green">All green</option>
+              </select></label
+            ><label class="switch-row"
+              ><span>Pedestrians<small>Walk along sidewalks and cross at crosswalks.</small></span
+              ><input
+                type="checkbox"
+                id="pedestrians-enabled"
+                checked
+                aria-label="Pedestrians" /></label
+            ><label class="switch-row"
+              ><span>Other vehicles<small>Traffic in both directions, with stops at intersections.</small></span
+              ><input type="checkbox" id="vehicles-enabled" checked aria-label="Other vehicles" /></label
+            ><label class="switch-row"
+              ><span>Connect neural output<small>Disconnect to brake; the neural simulation continues.</small></span
+              ><input type="checkbox" id="brain-connected" checked aria-label="Connect neural output"
+            /></label>
+            <div class="motor-readout">
+              <span>Steering <b id="steering">0°</b></span
+              ><span>Brake <b id="brake">0%</b></span>
+            </div>
+          </section>
+        </aside>
+      </div>
+      <div class="telemetry-row">
+        <section class="panel signal-panel">
+          <div class="panel-top">
+            <div><span class="index">04</span><strong>Spikes → control readout</strong></div>
+            <div class="chart-legend">
+              <span class="left">Left turn</span><span class="right">Right turn</span
+              ><span class="danger">Braking</span>
+            </div>
+          </div>
+          <canvas id="signal-chart" aria-label="Measured neural firing rates over time"></canvas>
+        </section>
+        <section class="panel vision-panel">
+          <div class="panel-top">
+            <div><span class="index">05</span><strong>What the car senses</strong></div>
+            <span class="secondary">11 distance rays</span>
+          </div>
+          <canvas id="sensor-chart" aria-label="Road and obstacle distances ahead"></canvas>
+        </section>
+      </div>
+      <footer>
+        <span>Real connectome · Simplified LIF dynamics · Engineered sensing and readout</span
+        ><span>A browser driving experiment. Not for real vehicles.</span>
+      </footer>
+    </main>
+    <dialog id="info-dialog">
+      <button id="close-info" class="dialog-close" aria-label="Close model information">×</button>
+      <p class="eyebrow">ABOUT THIS EXPERIMENT</p>
+      <h2>What does the neural circuit do?</h2>
+      <div id="model-description">
+        Road and obstacle signals are encoded as stimuli for a MaleCNS visual circuit. Spikes propagated through real connections are read out as steering and braking. The sensory encoder and output mapping are engineered; the fly has not learned to drive.
+      </div>
+      <p id="dataset-description"></p>
+      <p>
+        This connectome-inspired experiment uses simplified LIF neurons. It is not a complete biophysical fly model or evidence that a biological fly can drive.
+      </p>
+      <p>
+        <a href="./model-notes.en.html" target="_blank" rel="noopener">Data sources and model details ↗</a>
+      </p>
+    </dialog>
+    <script type="module" src="app.mjs"></script>
+  </body>
+</html>

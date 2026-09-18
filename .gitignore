@@ -1,0 +1,20 @@
+# Local dependencies and tools
+node_modules/
+.venv/
+__pycache__/
+*.py[cod]
+
+# Recordings, full-network experiments and temporary exports
+work/
+*.tar.gz
+*.zip
+*.webm
+*.mp4
+
+# Machine-specific hosting and configuration
+.openai/
+.sites-runtime/
+.env
+.env.*
+!.env.example
+.DS_Store

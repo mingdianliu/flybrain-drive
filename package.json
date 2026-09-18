@@ -1,0 +1,33 @@
+{
+  "name": "flybrain-drive",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "node --test scripts/test-drive.mjs scripts/test-activity.mjs scripts/test-steering.mjs",
+    "test:scene": "node --loader ./scripts/three-test-loader.mjs --test scripts/test-pedestrians.mjs",
+    "test:full": "node --test scripts/test-full-drive.mjs",
+    "benchmark:full": "node scripts/benchmark-full-drive.mjs",
+    "test:realtime": "node --test scripts/test-realtime.mjs",
+    "benchmark:realtime": "node scripts/benchmark-realtime.mjs",
+    "check": "node scripts/check-project.mjs",
+    "build:docs": "node scripts/build-english.mjs && python3 scripts/build-guide.py",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test:all": "npm run check && npm test && npm run test:scene && npm run test:realtime"
+  },
+  "devDependencies": {
+    "prettier": "3.6.2"
+  },
+  "description": "Real-time neural driving experiment using a MaleCNS connectome subgraph",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mingdianliu/flybrain-drive.git"
+  },
+  "homepage": "https://github.com/mingdianliu/flybrain-drive"
+}

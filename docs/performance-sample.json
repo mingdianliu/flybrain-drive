@@ -1,0 +1,61 @@
+{
+  "note": "Local Node.js compute-only samples, not a guarantee of browser/device performance. Browser scheduling targets 1x.",
+  "realtime_candidates": [
+    {
+      "neurons": 1860,
+      "edges": 114188,
+      "simulatedMs": 60000,
+      "wallMs": 1971.375208,
+      "ratio": 30.435606452041778,
+      "distance": 99.08090562541022,
+      "collisions": 0,
+      "spikes": 2956113
+    },
+    {
+      "neurons": 4000,
+      "edges": 523173,
+      "simulatedMs": 60000,
+      "wallMs": 4072.7210410000002,
+      "ratio": 14.732165399000131,
+      "distance": 99.19985504282577,
+      "collisions": 0,
+      "spikes": 4975215
+    },
+    {
+      "neurons": 8000,
+      "edges": 1277045,
+      "simulatedMs": 60000,
+      "wallMs": 8507.021084,
+      "ratio": 7.052997683624878,
+      "distance": 99.18554350672792,
+      "collisions": 0,
+      "spikes": 6213754
+    },
+    {
+      "neurons": 12000,
+      "edges": 2081611,
+      "simulatedMs": 60000,
+      "wallMs": 13099.880874999999,
+      "ratio": 4.5801943218052354,
+      "distance": 99.21308054260075,
+      "collisions": 0,
+      "spikes": 6397649
+    }
+  ],
+  "full_network": {
+    "neurons": 166606,
+    "edges": 25574615,
+    "synapses": 124144950,
+    "simulatedMs": 10000,
+    "wallMs": 25654.495417000002,
+    "speedRatio": 0.3897952322762692,
+    "totalSpikes": 1821648,
+    "firingNeurons": 5277,
+    "outsideOriginalCircuit": 4352,
+    "downstreamFiringNeurons": 4765,
+    "distanceM": 4.839313891711058,
+    "collisions": 0,
+    "simulationArraysMB": 160.445146,
+    "rssMB": 483.622912
+  }
+}
