@@ -2,11 +2,11 @@
 
 A fruit-fly connectome behind the wheel of an interactive 3D driving experiment. Watch a fly grip the steering wheel, change traffic conditions, and inspect the neural activity at recorded anatomical positions.
 
-[![Watch the 1080p driving demo](docs/media/showcase.jpg)](https://github.com/mingdianliu/flybrain-drive/releases/download/v0.1.0/flybrain-drive-showcase-1080p.mp4)
+https://github.com/user-attachments/assets/99707b33-291c-4d47-9b8e-008f51dd3f7a
 
-**[Watch / download the HD demo](https://github.com/mingdianliu/flybrain-drive/releases/download/v0.1.0/flybrain-drive-showcase-1080p.mp4)** · [English driving guide](docs/driving-guide.en.md) · [中文原理说明](docs/驾驶原理.md) · [Reproduce the data](docs/REPRODUCING.md)
+**[Download the 1080p MP4](https://github.com/mingdianliu/flybrain-drive/releases/download/v0.1.0/flybrain-drive-showcase-1080p.mp4)** · [English driving guide](docs/driving-guide.en.md) · [中文原理说明](docs/驾驶原理.md) · [Reproduce the data](docs/REPRODUCING.md)
 
-The demo is a 94-second recording of the actual simulation, with driver, passenger and city views, traffic-light changes, and synchronized neural activity. The video uses a 500 ms spike afterglow; the app defaults to 120 ms.
+Play the 1920 × 1080, 30 fps video above. Drag the timeline to seek or use the fullscreen control. The 94-second recording shows the actual simulation, with driver, passenger and city views, traffic-light changes, and synchronized neural activity. The video uses a 500 ms spike afterglow; the app defaults to 120 ms.
 
 **This model has not been trained to drive.** It couples a real connectome subgraph and simplified LIF neurons to engineered sensing, planning and motor readout. It is not a complete biophysical fly model or a system for real vehicles. The guide explains which behavior comes from neural propagation and which comes from programmed control.
 
