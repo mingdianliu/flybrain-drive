@@ -2,7 +2,7 @@
 
 A fruit-fly connectome behind the wheel of an interactive 3D driving experiment. Watch a fly grip the steering wheel, change traffic conditions, and inspect the neural activity at recorded anatomical positions.
 
-<!-- INLINE_VIDEO_ATTACHMENT -->
+https://github.com/user-attachments/assets/99707b33-291c-4d47-9b8e-008f51dd3f7a
 
 **[Download the 1080p MP4](https://github.com/mingdianliu/flybrain-drive/releases/download/v0.1.0/flybrain-drive-showcase-1080p.mp4)** · [English driving guide](docs/driving-guide.en.md) · [中文原理说明](docs/驾驶原理.md) · [Reproduce the data](docs/REPRODUCING.md)
 
